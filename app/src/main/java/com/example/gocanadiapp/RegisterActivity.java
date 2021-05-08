@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class RegisterActivity extends AppCompatActivity {
 
     EditText username,pass,email;
-    Button back,register;
+    Button back, register;
     FirebaseAuth fAuth;
 
     @Override
@@ -54,14 +54,14 @@ public class RegisterActivity extends AppCompatActivity {
                     username.setError("Isi Username Anda");
                     username.requestFocus();
                 }
-                if(password.isEmpty() && eMail.isEmpty() && userName.isEmpty()) {
-                    pass.setError("Isi Password Anda");
-                    email.setError("Isi Email Anda");
-                    username.setError("Isi Username Anda");
-                    username.requestFocus();
-                    email.requestFocus();
-                    pass.requestFocus();
-                }
+//                if(password.isEmpty() && eMail.isEmpty() && userName.isEmpty()) {
+//                    pass.setError("Isi Password Anda");
+//                    email.setError("Isi Email Anda");
+//                    username.setError("Isi Username Anda");
+//                    username.requestFocus();
+//                    email.requestFocus();
+//                    pass.requestFocus();
+//                }
                 if(!(eMail.isEmpty() && password.isEmpty() && userName.isEmpty()) ) {
                     fAuth.createUserWithEmailAndPassword(eMail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
