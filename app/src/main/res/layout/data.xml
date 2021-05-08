@@ -44,8 +44,6 @@
             android:text="Detail"
             android:layout_toRightOf="@id/img"
             android:layout_marginLeft="10dp"/>
-            
 
     </RelativeLayout>
-
 </androidx.cardview.widget.CardView>

@@ -22,6 +22,7 @@ public class DataFragment extends Fragment {
     private String mParam2;
     RecyclerView rv;
     Adapter adapter;
+
     public DataFragment() {
     }
 
