@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "153159088837",
+    "project_id": "gocandiapp",
+    "storage_bucket": "gocandiapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153159088837:android:f5295f19a241f1cb160eac",
+        "android_client_info": {
+          "package_name": "com.example.gocanadiapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153159088837-b8l16ra3njoklmat6ajuq9skkg70rqk0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvE7_KtOii1k6xhK8uwRlqYJ7XDDNyCXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153159088837-b8l16ra3njoklmat6ajuq9skkg70rqk0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
