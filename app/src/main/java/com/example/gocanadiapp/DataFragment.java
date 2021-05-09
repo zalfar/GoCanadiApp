@@ -49,7 +49,7 @@ public class DataFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_data, container, false);
 
-        rv = (RecyclerView)view.findViewById(R.id.rv);
+        rv = view.findViewById(R.id.rv);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
 
         FirebaseRecyclerOptions<Model> options =

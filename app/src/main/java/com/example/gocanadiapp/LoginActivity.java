@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent i = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(i);
                 }else{
-                    Toast.makeText(LoginActivity.this, "Terdapat Kesalahan", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Akun Anda Belum Terdaftar", Toast.LENGTH_SHORT).show();
                 }
 
             }
