@@ -1,12 +1,12 @@
 package com.example.gocanadiapp;
 
-public class Model {
-    String gambar, keterangan, latitude, longitude, nama;
+public class model {
+    private String gambar, keterangan, latitude, longitude, nama;
 
-    public Model() {
+    public model() {
     }
 
-    public Model(String gambar, String keterangan, String latitude, String longitude, String nama) {
+    public model(String gambar, String keterangan, String latitude, String longitude, String nama) {
         this.gambar = gambar;
         this.keterangan = keterangan;
         this.latitude = latitude;

@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DataFragment">
-
-    <LinearLayout
-        android:id="@+id/linear"
+    tools:context=".dataFragment">
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/tv_welcome"
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/welcome_user"
-            android:textSize="30sp"
-            android:textColor="@color/black"
-            android:layout_marginTop="20dp"/>
-
-        <Button
-            android:id="@+id/b_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/logout"
-            android:layout_marginLeft="120dp"/>
-    </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@id/linear"
-        android:id="@+id/rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#C7FFBE"
-        android:layout_marginTop="40dp"/>
-</RelativeLayout>
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_user"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp"/>
+            <Button
+                android:id="@+id/b_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/logout"
+                android:layout_marginLeft="120dp"/>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@id/linear"
+            android:id="@+id/rv_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#C7FFBE"
+            android:layout_marginTop="40dp"/>
+    </RelativeLayout>
+</FrameLayout>

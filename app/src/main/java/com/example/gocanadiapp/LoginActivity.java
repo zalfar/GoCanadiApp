@@ -15,7 +15,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -23,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView register;
     Button login;
     FirebaseAuth fAuth;
-    private FirebaseAuth.AuthStateListener fState;
+//    private FirebaseAuth.AuthStateListener fState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,20 +36,20 @@ public class LoginActivity extends AppCompatActivity {
         login = findViewById(R.id.b_login);
         register = findViewById(R.id.register);
 
-        fState = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser fUser = fAuth.getCurrentUser();
-                if(fUser != null){
-                    Toast.makeText(LoginActivity.this, "Anda Berhasil Masuk", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(LoginActivity.this, HomeActivity.class);
-                    startActivity(i);
-                }else{
-                    Toast.makeText(LoginActivity.this, "Akun Anda Belum Terdaftar", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        };
+//        fState = new FirebaseAuth.AuthStateListener() {
+//            @Override
+//            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+//                FirebaseUser fUser = fAuth.getCurrentUser();
+//                if(fUser != null){
+//                    Toast.makeText(LoginActivity.this, "Anda Berhasil Masuk", Toast.LENGTH_SHORT).show();
+//                    Intent i = new Intent(LoginActivity.this, HomeActivity2.class);
+//                    startActivity(i);
+//                }else{
+//                    Toast.makeText(LoginActivity.this, "Akun Anda Belum Terdaftar", Toast.LENGTH_SHORT).show();
+//                }
+//
+//            }
+//        };
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(LoginActivity.this, "Berhasil Login", Toast.LENGTH_SHORT).show();
-                                Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+                                Intent i = new Intent(LoginActivity.this, DataHomeActivity.class);
                                 startActivity(i);
                             } else {
                                 Toast.makeText(LoginActivity.this, "Terdapat Kesalahan" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

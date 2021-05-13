@@ -8,23 +8,34 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class Adapter extends FirebaseRecyclerAdapter<Model,Adapter.ViewHolder> {
+public class myAdapter extends FirebaseRecyclerAdapter<model, myAdapter.ViewHolder> {
 
-    public Adapter(@NonNull FirebaseRecyclerOptions<Model> options) {
+    public myAdapter(@NonNull FirebaseRecyclerOptions<model> options) {
+
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Model model) {
+    protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull final model model) {
         holder.t_keterangan.setText(model.getKeterangan());
         holder.t_nama.setText(model.getNama());
         Glide.with(holder.img.getContext()).load(model.getGambar()).into(holder.img);
+
+        holder.b_detail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppCompatActivity activity = (AppCompatActivity)view.getContext();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.container, new detailFragment(model.getNama(), model.getGambar(), model.getKeterangan())).addToBackStack(null).commit();
+
+            }
+        });
 
     }
 

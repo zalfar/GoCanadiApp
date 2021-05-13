@@ -15,6 +15,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -54,14 +56,14 @@ public class RegisterActivity extends AppCompatActivity {
                     username.setError("Isi Username Anda");
                     username.requestFocus();
                 }
-//                if(password.isEmpty() && eMail.isEmpty() && userName.isEmpty()) {
-//                    pass.setError("Isi Password Anda");
-//                    email.setError("Isi Email Anda");
-//                    username.setError("Isi Username Anda");
-//                    username.requestFocus();
-//                    email.requestFocus();
-//                    pass.requestFocus();
-//                }
+                if(password.isEmpty() && eMail.isEmpty() && userName.isEmpty()) {
+                    pass.setError("Isi Password Anda");
+                    email.setError("Isi Email Anda");
+                    username.setError("Isi Username Anda");
+                    username.requestFocus();
+                    email.requestFocus();
+                    pass.requestFocus();
+                }
                 if(!(eMail.isEmpty() && password.isEmpty() && userName.isEmpty()) ) {
                     fAuth.createUserWithEmailAndPassword(eMail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override

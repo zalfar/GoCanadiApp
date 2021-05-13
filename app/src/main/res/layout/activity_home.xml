@@ -2,8 +2,41 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/wrapper"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/linear_act"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_welcome_act"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_user"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp"/>
+            <Button
+                android:id="@+id/b_logout_act"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/logout"
+                android:layout_marginLeft="120dp"/>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@id/linear_act"
+            android:id="@+id/rv_activity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#C7FFBE"
+            android:layout_marginTop="40dp"/>
+    </RelativeLayout>
 </FrameLayout>
